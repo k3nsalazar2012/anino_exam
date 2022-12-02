@@ -8,16 +8,14 @@ public class SlotMachineInstance : MonoBehaviour
     private WaitForSeconds _delay = new WaitForSeconds(0.1f);
 
     private bool _isSpinning = false;
-    private void Update() 
+    
+    public void OnSpinButton() 
     {
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            _isSpinning = !_isSpinning;
-            if(_isSpinning)
-                StartCoroutine(StartSpin());
-            else
-                StartCoroutine(StopSpin());
-        }
+        _isSpinning = !_isSpinning;
+        if(_isSpinning)
+            StartCoroutine(StartSpin());
+        else
+            StartCoroutine(StopSpin());
     }
 
     private IEnumerator StartSpin()

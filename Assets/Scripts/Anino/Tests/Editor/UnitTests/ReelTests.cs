@@ -13,7 +13,7 @@ namespace Anino.Tests
         [SetUp]
         public void SetUp()
         {
-            _reelController = new ReelController(verticalSpacing, symbolsCount * verticalSpacing, null);
+            _reelController = new ReelController(symbolsCount, verticalSpacing, symbolsCount * verticalSpacing, null);
         }
 
         [Test]
@@ -31,11 +31,11 @@ namespace Anino.Tests
         }
 
         [Test]
-        public void GetMiddleRowResult_PositionIsEndPosition_ResultIsLastSymbolIndex()
+        public void GetMiddleRowResult_PositionIsEndPosition_ResultIsZero()
         {
             // Arrange
             _reelController.SetPosition(verticalSpacing * symbolsCount);
-            var expectedResult = symbolsCount;
+            var expectedResult = 0;
 
             // Act
             var actualResult = _reelController.GetMiddleRowResult();
@@ -56,7 +56,97 @@ namespace Anino.Tests
 
             // Act
             var actualResult = _reelController.GetMiddleRowResult();
-            UnityEngine.Debug.Log($"[expected] {expectedResult} | [actual]{actualResult}");
+
+            // Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void GetTopRowResult_PositionIsStartPosition_ResultIsOne()
+        {
+            // Arrange
+            _reelController.SetPosition(0);
+            var expectedResult = 1;
+
+            // Act
+            var actualResult = _reelController.GetTopRowResult();
+
+            // Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void GetTopRowResult_PositionIsEndPosition_ResultIsOne()
+        {
+            // Arrange
+            _reelController.SetPosition(verticalSpacing * symbolsCount);
+            var expectedResult = 1;
+
+            // Act
+            var actualResult = _reelController.GetTopRowResult();
+
+            // Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+
+        [TestCase(4.75f, 3)]
+        [TestCase(13.93f, 7)]
+        [TestCase(23.2f, 11)]
+        [TestCase(23.1f, 11)]
+        [TestCase(100f, 1)]
+        public void GetTopRowResult_VariedPositions(float position, int expectedResult)
+        {
+            // Arrange
+            _reelController.SetPosition(position);
+
+            // Act
+            var actualResult = _reelController.GetTopRowResult();
+
+            // Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void GetBottomRowResult_PositionIsStartPosition_ResultIsLastSymbolIndex()
+        {
+            // Arrange
+            _reelController.SetPosition(0);
+            var expectedResult = symbolsCount-1;
+
+            // Act
+            var actualResult = _reelController.GetBottomRowResult();
+
+            // Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void GetBottomRowResult_PositionIsEndPosition_ResultIsLastSymbolIndex()
+        {
+            // Arrange
+            _reelController.SetPosition(verticalSpacing * symbolsCount);
+            var expectedResult = symbolsCount-1;
+
+            // Act
+            var actualResult = _reelController.GetBottomRowResult();
+
+            // Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCase(4.75f, 1)]
+        [TestCase(13.93f, 5)]
+        [TestCase(23.2f, 9)]
+        [TestCase(23.1f, 9)]
+        [TestCase(100f,15)]
+        public void GetBottomRowResult_VariedPositions(float position, int expectedResult)
+        {
+            // Arrange
+            _reelController.SetPosition(position);
+
+            // Act
+            var actualResult = _reelController.GetBottomRowResult();
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);

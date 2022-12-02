@@ -13,21 +13,19 @@ namespace Anino.Implementation
         public bool isSpinning => _isSpinning;
 
         private WaitForSeconds _delay;
-        private float _speed;
-        private float _correctSpinValue;
+        private float _speed, _correctSpinValue, _currentPosition, _verticalSpacing, _endPosition;
+        private int _symbolCount;
 
-        private float _verticalSpacing;
-        private float _endPosition;
-        private float _currentPosition;
-
-        public ReelController(float verticalSpacing, float endPosition, Action<float> onSpinCallback)
+        public ReelController(int symbolCount, float verticalSpacing, float endPosition, Action<float> onSpinCallback)
         {
-            _delay = new WaitForSeconds(0.001f);
-            _isSpinning = false;   
+            _symbolCount = symbolCount;
             _verticalSpacing = verticalSpacing;   
             _endPosition = endPosition;
-            _currentPosition = 0;
             onSpin = onSpinCallback;
+
+            _isSpinning = false;  
+            _currentPosition = 0;
+            _delay = new WaitForSeconds(0.001f);
         }
 
         public void Spin()
@@ -43,7 +41,7 @@ namespace Anino.Implementation
             _currentPosition = _correctSpinValue;
             onSpin?.Invoke(_currentPosition);
 
-            Debug.Log($"[index] {GetMiddleRowResult()}");
+            Debug.Log($"[results] {GetTopRowResult()},{GetMiddleRowResult()},{GetBottomRowResult()}");
         }
 
         public IEnumerator Spinning()
@@ -62,10 +60,32 @@ namespace Anino.Implementation
                 yield return _delay;
             }
         }
+        
+        public int GetTopRowResult()
+        {
+            int topRowResult = GetMiddleRowResult() + 1;
+            if(topRowResult >= _symbolCount)
+                topRowResult = 0;
+
+            return topRowResult;
+        }
 
         public int GetMiddleRowResult()
         {
-            return Mathf.Abs(GetPositionToSymbolIndex());
+            int middleRowResult =  Mathf.Abs(GetPositionToSymbolIndex());
+            if(middleRowResult == _symbolCount)
+                middleRowResult = 0;
+                
+            return middleRowResult;
+        }
+
+        public int GetBottomRowResult()
+        {
+            int bottomRowResult = GetMiddleRowResult() - 1;
+            if(bottomRowResult < 0)
+                bottomRowResult = _symbolCount-1;
+
+            return bottomRowResult;
         }
 
 #if UNITY_EDITOR

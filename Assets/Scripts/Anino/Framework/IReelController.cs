@@ -11,7 +11,9 @@ namespace Anino.Framework
         void Spin();
         void StopSpin();
         IEnumerator Spinning();
+        int GetTopRowResult();
         int GetMiddleRowResult();
+        int GetBottomRowResult();
 
         #if UNITY_EDITOR
         void SetPosition(float position);

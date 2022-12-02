@@ -11,7 +11,7 @@ public class ReelInstance : MonoBehaviour
     private void Awake() 
     {
         CreateReel();
-        _controller = new ReelController(_reelData.data.GetVerticalSpacing(), _reelData.data.GetEndPosition(), OnSpin);
+        _controller = new ReelController(_reelData.data.symbolsCount, _reelData.data.GetVerticalSpacing(), _reelData.data.GetEndPosition(), OnSpin);
     }
 
     private void CreateReel()
