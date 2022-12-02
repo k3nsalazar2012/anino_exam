@@ -1,0 +1,16 @@
+{
+    "name": "Anino.Implementation",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b815a0cd0ac4344bebf0507a390dd435"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
