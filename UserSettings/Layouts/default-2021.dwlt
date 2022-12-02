@@ -8,6 +8,30 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 645
+    y: 179
+    width: 1180
+    height: 735
+  m_ShowMode: 0
+  m_Title: Test Runner
+  m_RootView: {fileID: 4}
+  m_MinSize: {x: 100, y: 121}
+  m_MaxSize: {x: 4000, y: 4021}
+  m_Maximized: 0
+--- !u!114 &2
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -19,12 +43,113 @@ MonoBehaviour:
     width: 1920
     height: 920
   m_ShowMode: 4
-  m_Title: Hierarchy
-  m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 492}
+  m_Title: Game
+  m_RootView: {fileID: 7}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
---- !u!114 &2
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: TestRunnerWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1180
+    height: 735
+  m_MinSize: {x: 100, y: 121}
+  m_MaxSize: {x: 4000, y: 4021}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 15}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 3}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1180
+    height: 735
+  m_MinSize: {x: 100, y: 121}
+  m_MaxSize: {x: 4000, y: 4021}
+  vertical: 0
+  controlID: 5304
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ConsoleWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 770
+    width: 1920
+    height: 100
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 16}
+  m_Panes:
+  - {fileID: 16}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 9}
+  - {fileID: 5}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 1920
+    height: 870
+  m_MinSize: {x: 400, y: 200}
+  m_MaxSize: {x: 32384, y: 16192}
+  vertical: 1
+  controlID: 4948
+--- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,22 +162,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 3}
-  - {fileID: 4}
-  - {fileID: 5}
+  - {fileID: 8}
+  - {fileID: 6}
+  - {fileID: 10}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1920
     height: 920
-  m_MinSize: {x: 875, y: 492}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
   m_UseBottomView: 1
   m_BottomViewHeight: 20
---- !u!114 &3
+--- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,8 +198,8 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: 2 by 3
---- !u!114 &4
+  m_LastLoadedLayoutName: 
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,21 +212,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 9}
-  - {fileID: 6}
-  - {fileID: 7}
-  - {fileID: 8}
+  - {fileID: 14}
+  - {fileID: 11}
+  - {fileID: 12}
+  - {fileID: 13}
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 30
+    y: 0
     width: 1920
-    height: 870
+    height: 770
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 8096}
   vertical: 0
-  controlID: 133
---- !u!114 &5
+  controlID: 4982
+--- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,7 +247,7 @@ MonoBehaviour:
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
---- !u!114 &6
+--- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,18 +262,18 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 587
+    x: 517
     y: 0
-    width: 285
-    height: 870
+    width: 284
+    height: 770
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 10}
+  m_ActualView: {fileID: 17}
   m_Panes:
-  - {fileID: 10}
+  - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &7
+--- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,18 +288,18 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 872
+    x: 801
     y: 0
-    width: 618
-    height: 870
+    width: 485
+    height: 770
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 12}
+  m_ActualView: {fileID: 19}
   m_Panes:
-  - {fileID: 12}
+  - {fileID: 19}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &8
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,18 +314,18 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1490
+    x: 1286
     y: 0
-    width: 430
-    height: 870
+    width: 634
+    height: 770
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 11}
+  m_ActualView: {fileID: 18}
   m_Panes:
-  - {fileID: 11}
+  - {fileID: 18}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &9
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,17 +342,653 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 587
-    height: 870
+    width: 517
+    height: 770
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 20}
   m_Panes:
-  - {fileID: 14}
-  - {fileID: 13}
+  - {fileID: 21}
+  - {fileID: 20}
   m_Selected: 1
   m_LastSelected: 0
---- !u!114 &10
+--- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 645
+    y: 179
+    width: 1180
+    height: 714
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_Spl:
+    ID: 5331
+    splitterInitialOffset: 0
+    currentActiveSplitter: -1
+    realSizes:
+    - 483
+    - 161
+    relativeSizes:
+    - 0.75
+    - 0.25
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 644
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 1
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 0}
+    m_NewResultList: []
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories: []
+    m_SelectedOption: 0
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 15}
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[anino exam][suite]'
+      name: anino exam
+      fullName: anino exam
+      resultStatus: 1
+      duration: 0.0573621
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1011
+      uniqueId: '[Assembly-CSharp-Editor.dll][suite]'
+      name: Assembly-CSharp-Editor.dll
+      fullName: /Users/Kildekode/Documents/anino_exam/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+      resultStatus: 1
+      duration: 0.0420279
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[anino exam][suite]'
+    - id: 1012
+      uniqueId: Assembly-CSharp-Editor.dll/[Anino][suite]
+      name: Anino
+      fullName: Anino
+      resultStatus: 1
+      duration: 0.0416895
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1011
+      parentUniqueId: '[Assembly-CSharp-Editor.dll][suite]'
+    - id: 1013
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/[Assembly-CSharp-Editor][Anino.Tests][suite]
+      name: Tests
+      fullName: Anino.Tests
+      resultStatus: 1
+      duration: 0.0380079
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1012
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Anino][suite]
+    - id: 1001
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests][suite]
+      name: ReelTests
+      fullName: Anino.Tests.ReelTests
+      resultStatus: 1
+      duration: 0.0340884
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1013
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/[Assembly-CSharp-Editor][Anino.Tests][suite]
+    - id: 1019
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetBottomRowResult_PositionIsEndPosition_ResultIsLastSymbolIndex]
+      name: GetBottomRowResult_PositionIsEndPosition_ResultIsLastSymbolIndex
+      fullName: Anino.Tests.ReelTests.GetBottomRowResult_PositionIsEndPosition_ResultIsLastSymbolIndex
+      resultStatus: 1
+      duration: 0.0081362
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests][suite]
+    - id: 1018
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetBottomRowResult_PositionIsStartPosition_ResultIsLastSymbolIndex]
+      name: GetBottomRowResult_PositionIsStartPosition_ResultIsLastSymbolIndex
+      fullName: Anino.Tests.ReelTests.GetBottomRowResult_PositionIsStartPosition_ResultIsLastSymbolIndex
+      resultStatus: 1
+      duration: 0.0000891
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests][suite]
+    - id: 1025
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions][suite]
+      name: GetBottomRowResult_VariedPositions
+      fullName: Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions
+      resultStatus: 1
+      duration: 0.0125098
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests][suite]
+    - id: 1020
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetBottomRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions(4.75f,1)]
+      name: GetBottomRowResult_VariedPositions(4.75f,1)
+      fullName: Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions(4.75f,1)
+      resultStatus: 1
+      duration: 0.0002247
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1025
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions][suite]
+    - id: 1021
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetBottomRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions(13.93f,5)]
+      name: GetBottomRowResult_VariedPositions(13.93f,5)
+      fullName: Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions(13.93f,5)
+      resultStatus: 1
+      duration: 0.0000416
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1025
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions][suite]
+    - id: 1022
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetBottomRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions(23.2f,9)]
+      name: GetBottomRowResult_VariedPositions(23.2f,9)
+      fullName: Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions(23.2f,9)
+      resultStatus: 1
+      duration: 0.0000405
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1025
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions][suite]
+    - id: 1023
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetBottomRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions(23.1f,9)]
+      name: GetBottomRowResult_VariedPositions(23.1f,9)
+      fullName: Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions(23.1f,9)
+      resultStatus: 1
+      duration: 0.0000387
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1025
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions][suite]
+    - id: 1024
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetBottomRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions(100.0f,15)]
+      name: GetBottomRowResult_VariedPositions(100.0f,15)
+      fullName: Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions(100.0f,15)
+      resultStatus: 1
+      duration: 0.0000363
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1025
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetBottomRowResult_VariedPositions][suite]
+    - id: 1003
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetMiddleRowResult_PositionIsEndPosition_ResultIsZero]
+      name: GetMiddleRowResult_PositionIsEndPosition_ResultIsZero
+      fullName: Anino.Tests.ReelTests.GetMiddleRowResult_PositionIsEndPosition_ResultIsZero
+      resultStatus: 1
+      duration: 0.0000805
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests][suite]
+    - id: 1002
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetMiddleRowResult_PositionIsStartPosition_ResultIsZero]
+      name: GetMiddleRowResult_PositionIsStartPosition_ResultIsZero
+      fullName: Anino.Tests.ReelTests.GetMiddleRowResult_PositionIsStartPosition_ResultIsZero
+      resultStatus: 1
+      duration: 0.0000613
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests][suite]
+    - id: 1009
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions][suite]
+      name: GetMiddleRowResult_VariedPositions
+      fullName: Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions
+      resultStatus: 1
+      duration: 0.0026805
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests][suite]
+    - id: 1004
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetMiddleRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions(4.75f,2)]
+      name: GetMiddleRowResult_VariedPositions(4.75f,2)
+      fullName: Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions(4.75f,2)
+      resultStatus: 1
+      duration: 0.000087
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions][suite]
+    - id: 1005
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetMiddleRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions(13.93f,6)]
+      name: GetMiddleRowResult_VariedPositions(13.93f,6)
+      fullName: Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions(13.93f,6)
+      resultStatus: 1
+      duration: 0.0000382
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions][suite]
+    - id: 1006
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetMiddleRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions(23.2f,10)]
+      name: GetMiddleRowResult_VariedPositions(23.2f,10)
+      fullName: Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions(23.2f,10)
+      resultStatus: 1
+      duration: 0.000045
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions][suite]
+    - id: 1007
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetMiddleRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions(23.1f,10)]
+      name: GetMiddleRowResult_VariedPositions(23.1f,10)
+      fullName: Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions(23.1f,10)
+      resultStatus: 1
+      duration: 0.0000362
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions][suite]
+    - id: 1008
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetMiddleRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions(100.0f,0)]
+      name: GetMiddleRowResult_VariedPositions(100.0f,0)
+      fullName: Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions(100.0f,0)
+      resultStatus: 1
+      duration: 0.0000373
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetMiddleRowResult_VariedPositions][suite]
+    - id: 1011
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetTopRowResult_PositionIsEndPosition_ResultIsOne]
+      name: GetTopRowResult_PositionIsEndPosition_ResultIsOne
+      fullName: Anino.Tests.ReelTests.GetTopRowResult_PositionIsEndPosition_ResultIsOne
+      resultStatus: 1
+      duration: 0.0000866
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests][suite]
+    - id: 1010
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetTopRowResult_PositionIsStartPosition_ResultIsOne]
+      name: GetTopRowResult_PositionIsStartPosition_ResultIsOne
+      fullName: Anino.Tests.ReelTests.GetTopRowResult_PositionIsStartPosition_ResultIsOne
+      resultStatus: 1
+      duration: 0.0000621
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests][suite]
+    - id: 1017
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetTopRowResult_VariedPositions][suite]
+      name: GetTopRowResult_VariedPositions
+      fullName: Anino.Tests.ReelTests.GetTopRowResult_VariedPositions
+      resultStatus: 1
+      duration: 0.0032164
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests][suite]
+    - id: 1012
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetTopRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetTopRowResult_VariedPositions(4.75f,3)]
+      name: GetTopRowResult_VariedPositions(4.75f,3)
+      fullName: Anino.Tests.ReelTests.GetTopRowResult_VariedPositions(4.75f,3)
+      resultStatus: 1
+      duration: 0.0000878
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetTopRowResult_VariedPositions][suite]
+    - id: 1013
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetTopRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetTopRowResult_VariedPositions(13.93f,7)]
+      name: GetTopRowResult_VariedPositions(13.93f,7)
+      fullName: Anino.Tests.ReelTests.GetTopRowResult_VariedPositions(13.93f,7)
+      resultStatus: 1
+      duration: 0.000039
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetTopRowResult_VariedPositions][suite]
+    - id: 1014
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetTopRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetTopRowResult_VariedPositions(23.2f,11)]
+      name: GetTopRowResult_VariedPositions(23.2f,11)
+      fullName: Anino.Tests.ReelTests.GetTopRowResult_VariedPositions(23.2f,11)
+      resultStatus: 1
+      duration: 0.0000365
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetTopRowResult_VariedPositions][suite]
+    - id: 1015
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetTopRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetTopRowResult_VariedPositions(23.1f,11)]
+      name: GetTopRowResult_VariedPositions(23.1f,11)
+      fullName: Anino.Tests.ReelTests.GetTopRowResult_VariedPositions(23.1f,11)
+      resultStatus: 1
+      duration: 0.000035
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetTopRowResult_VariedPositions][suite]
+    - id: 1016
+      uniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/GetTopRowResult_VariedPositions/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetTopRowResult_VariedPositions(100.0f,1)]
+      name: GetTopRowResult_VariedPositions(100.0f,1)
+      fullName: Anino.Tests.ReelTests.GetTopRowResult_VariedPositions(100.0f,1)
+      resultStatus: 1
+      duration: 0.0000363
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Assembly-CSharp-Editor.dll/Anino/Tests/ReelTests/[Assembly-CSharp-Editor][Anino.Tests.ReelTests.GetTopRowResult_VariedPositions][suite]
+    m_ResultText: ReelTests (0.034s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 3c7a391b
+      m_LastClickedID: 456751676
+      m_ExpandedIDs: 18421edca2ed76013c7a391b8cf0ac21a0329e2da1791a39e6cddb43ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+--- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Console
+    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 853
+    width: 1920
+    height: 79
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,10 +1008,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 587
+    x: 517
     y: 83
-    width: 283
-    height: 849
+    width: 282
+    height: 749
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -258,9 +1019,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 72f9ffff
+      m_SelectedIDs: 06cfffff
+      m_LastClickedID: -12538
+      m_ExpandedIDs: 08cfffff72cfffff96d0ffff6ad1ffff7ad2ffff8ad3ffff9ad4ffff6ed5ffff42d6ffff26d7fffffad7ffffced8ffffa2d9ffff94daffff48e8ffff04e9ffff24fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -276,7 +1037,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 11}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -284,7 +1045,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: ed8138fc5590047f9af34c3faeeb9727
---- !u!114 &11
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -304,10 +1065,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1490
+    x: 1286
     y: 83
-    width: 429
-    height: 849
+    width: 633
+    height: 749
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -325,7 +1086,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &12
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,10 +1106,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 872
+    x: 801
     y: 83
-    width: 616
-    height: 849
+    width: 483
+    height: 749
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -366,22 +1127,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Data
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
-  m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/Kildekode/Documents/anino exam
+  - Assets/Data
+  m_LastFoldersGridSize: 16
+  m_LastProjectPath: /Users/Kildekode/Documents/anino_exam
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d0640000
-    m_LastClickedID: 25808
-    m_ExpandedIDs: 00000000ce64000000ca9a3b
+    m_SelectedIDs: 08600000
+    m_LastClickedID: 24584
+    m_ExpandedIDs: 00000000fa5f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -409,7 +1170,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ce64000000ca9a3b
+    m_ExpandedIDs: 00000000fa5f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -437,7 +1198,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 
+    m_ExpandedInstanceIDs: d45f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -453,7 +1214,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 7}
+      m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -462,10 +1223,10 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_GridSize: 16
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 129
---- !u!114 &13
+  m_DirectoriesAreaWidth: 208
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -487,8 +1248,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 83
-    width: 586
-    height: 849
+    width: 516
+    height: 749
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -535,29 +1296,29 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 586
-      height: 828
+      width: 516
+      height: 728
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 293, y: 414}
+    m_Translation: {x: 258, y: 364}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -293
-      y: -414
-      width: 586
-      height: 828
+      x: -258
+      y: -364
+      width: 516
+      height: 728
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 586, y: 849}
+  m_LastWindowPixelSize: {x: 516, y: 749}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
---- !u!114 &14
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -890,9 +1651,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10
+    m_Target: 4.2979646
     speed: 2
-    m_Value: 10
+    m_Value: 4.2979646
   m_Ortho:
     m_Target: 1
     speed: 2

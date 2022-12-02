@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reelData: {fileID: 11400000, guid: c4ed97ff8bd52491c972207a02984073, type: 2}
-  symbolPrefab: {fileID: 8963665066769512360, guid: 492486394f78d4b08964685ea6efcb09, type: 3}
+  _symbolPrefab: {fileID: 8963665066769512360, guid: 492486394f78d4b08964685ea6efcb09, type: 3}

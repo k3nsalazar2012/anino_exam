@@ -5,9 +5,12 @@ namespace Anino.Framework
 {
     public interface IReelController
     {
-        Action<float> onSpin {get;}
+        Action<float> onSpin {get; set;}
+        Action<int, int, int> onSpinEnded {get;set;}
         bool isSpinning {get;}
 
+        void SetView(IReelView view);
+        void SetData(IReelData data);
         void Spin();
         void StopSpin();
         IEnumerator Spinning();

@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daaaf328038f342bbad033a7128dc704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reels:
+  _reels:
   - {fileID: 1619254627}
   - {fileID: 1954537577}
   - {fileID: 753174921}
@@ -510,6 +510,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8961491866808512019, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
+      propertyPath: _reelData
+      value: 
+      objectReference: {fileID: 11400000, guid: c4ed97ff8bd52491c972207a02984073, type: 2}
     - target: {fileID: 8961491866808512029, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
       propertyPath: m_Name
       value: ReelInstance
@@ -861,6 +865,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8961491866808512019, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
+      propertyPath: _reelData
+      value: 
+      objectReference: {fileID: 11400000, guid: b426a3c357ba64941953e3efd99ac62f, type: 2}
     - target: {fileID: 8961491866808512029, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
       propertyPath: m_Name
       value: ReelInstance
@@ -1056,6 +1064,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8961491866808512019, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
+      propertyPath: _reelData
+      value: 
+      objectReference: {fileID: 11400000, guid: b426a3c357ba64941953e3efd99ac62f, type: 2}
     - target: {fileID: 8961491866808512029, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
       propertyPath: m_Name
       value: ReelInstance
@@ -1128,6 +1140,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8961491866808512019, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
+      propertyPath: _reelData
+      value: 
+      objectReference: {fileID: 11400000, guid: b426a3c357ba64941953e3efd99ac62f, type: 2}
     - target: {fileID: 8961491866808512029, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
       propertyPath: m_Name
       value: ReelInstance

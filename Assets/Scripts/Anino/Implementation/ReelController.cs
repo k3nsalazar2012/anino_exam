@@ -5,27 +5,41 @@ using System;
 
 namespace Anino.Implementation
 {
-    public class ReelController : IReelController
+    public class ReelController : IReelController, IReelViewObserver
     {
-        public Action<float> onSpin {get;}
-        
+        public Action<float> onSpin {get; set;}
+        public Action<int, int, int> onSpinEnded {get;set;}
+
         private bool _isSpinning;
         public bool isSpinning => _isSpinning;
 
         private WaitForSeconds _delay;
         private float _speed, _correctSpinValue, _currentPosition, _verticalSpacing, _endPosition;
         private int _symbolCount;
-
-        public ReelController(int symbolCount, float verticalSpacing, float endPosition, Action<float> onSpinCallback)
+        private IReelView _view;
+        private IReelData _data;
+        
+        public ReelController(int symbolCount, float verticalSpacing, float endPosition)
         {
             _symbolCount = symbolCount;
             _verticalSpacing = verticalSpacing;   
             _endPosition = endPosition;
-            onSpin = onSpinCallback;
 
             _isSpinning = false;  
             _currentPosition = 0;
             _delay = new WaitForSeconds(0.001f);
+        }
+
+        public void SetData(IReelData data)
+        {
+            _data = data;
+        }
+
+        public void SetView(IReelView view)
+        {
+            _view = view;
+            _view.CreateReel();
+            _view.SetObserver(this);
         }
 
         public void Spin()
@@ -40,8 +54,12 @@ namespace Anino.Implementation
             _correctSpinValue = GetPositionToSymbolIndex() * _verticalSpacing;
             _currentPosition = _correctSpinValue;
             onSpin?.Invoke(_currentPosition);
-
-            Debug.Log($"[results] {GetTopRowResult()},{GetMiddleRowResult()},{GetBottomRowResult()}");
+            onSpinEnded?.Invoke
+            (
+                _data.symbols[GetTopRowResult()],
+                _data.symbols[GetMiddleRowResult()],
+                _data.symbols[GetBottomRowResult()]
+            );
         }
 
         public IEnumerator Spinning()
@@ -75,7 +93,7 @@ namespace Anino.Implementation
             int middleRowResult =  Mathf.Abs(GetPositionToSymbolIndex());
             if(middleRowResult == _symbolCount)
                 middleRowResult = 0;
-                
+
             return middleRowResult;
         }
 
@@ -99,6 +117,17 @@ namespace Anino.Implementation
         private int GetPositionToSymbolIndex()
         {
             return Mathf.RoundToInt(_currentPosition / _verticalSpacing);
+        }
+
+        public void OnSpinInteract(MonoBehaviour mono)
+        {
+            Spin();
+            mono.StartCoroutine(Spinning());
+        }
+
+        public void OnStopSpinInteract()
+        {
+            StopSpin();
         }
     }
 }

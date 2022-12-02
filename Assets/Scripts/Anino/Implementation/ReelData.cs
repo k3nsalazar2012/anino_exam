@@ -10,8 +10,11 @@ namespace Anino.Implementation
         [SerializeField] private Vector2 _symbolResolution;
         public Vector2 symbolResolution => _symbolResolution;
         
-        [SerializeField] private Sprite[] _symbols;
-        public Sprite[] symbols => _symbols;
+        [SerializeField] private int[] _symbols;
+        public int[] symbols => _symbols;
+        
+        [SerializeField] private Sprite[] _symbolSprites;
+        public Sprite[] symbolSprites => _symbolSprites;
 
         [SerializeField] private int _symbolsCount;
         public int symbolsCount => _symbolsCount;

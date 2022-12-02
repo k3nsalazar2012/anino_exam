@@ -13,7 +13,7 @@ namespace Anino.Tests
         [SetUp]
         public void SetUp()
         {
-            _reelController = new ReelController(symbolsCount, verticalSpacing, symbolsCount * verticalSpacing, null);
+            _reelController = new ReelController(symbolsCount, verticalSpacing, symbolsCount * verticalSpacing);
         }
 
         [Test]
