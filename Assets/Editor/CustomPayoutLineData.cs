@@ -12,11 +12,10 @@ public class CustomPayoutLineData : PropertyDrawer
         newPosition.y += 20f;
 
         SerializedProperty rows = property.FindPropertyRelative("rows");
-        UnityEngine.Debug.Log($"[rows] base {rows == null}");
+
         for(int i=0; i< 3; i++)
         {
             SerializedProperty row = rows.GetArrayElementAtIndex(i).FindPropertyRelative("row");
-             UnityEngine.Debug.Log($"[row] {row == null}");
             newPosition.height = 20;
 
             if(row.arraySize != 5)
