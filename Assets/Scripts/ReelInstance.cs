@@ -2,45 +2,56 @@ using UnityEngine;
 using Anino.Framework;
 using Anino.Implementation;
 
-public class ReelInstance : MonoBehaviour
+public class ReelInstance : MonoBehaviour, IReelView
 {
     [SerializeField] private ReelDataAsset _reelData;
-    [SerializeField] private SpriteRenderer symbolPrefab;
+    [SerializeField] private SpriteRenderer _symbolPrefab;
+    public IReelController controller => _controller;
     private IReelController _controller;
+    private IReelViewObserver _observer;
 
-    private void Awake() 
+    public void Initialize() 
     {
-        CreateReel();
-        _controller = new ReelController(_reelData.data.GetVerticalSpacing(), _reelData.data.GetEndPosition(), OnSpin);
+        _controller = new ReelController(_reelData.data.symbolsCount, _reelData.data.GetVerticalSpacing(), _reelData.data.GetEndPosition()); 
+        _controller.SetData(_reelData.data);
+        _controller.SetView(this);
+        _controller.onSpin += OnSpin;
     }
 
-    private void CreateReel()
-    {
-        float yPosition = -_reelData.data.GetVerticalSpacing();
+    public void SetObserver(IReelViewObserver observer) => _observer = observer;
 
-        for(int i=0; i<_reelData.data.symbols.Length; i++)
+    public void CreateReel()
+    {
+        var data = _reelData.data;
+
+        float yPosition = -data.GetVerticalSpacing();
+
+        SpriteRenderer symbol = Instantiate(_symbolPrefab, transform);
+        symbol.sprite = data.symbolSprites[data.symbols[_reelData.data.symbolsCount-1]-1];
+        symbol.transform.localPosition = Vector3.up * yPosition;
+
+        yPosition += data.GetVerticalSpacing();
+
+        for(int i=0; i<data.symbols.Length; i++)
         {
-            SpriteRenderer symbol = Instantiate(symbolPrefab, transform);
-            symbol.sprite = _reelData.data.symbols[i];
+            symbol = Instantiate(_symbolPrefab, transform);
+            symbol.sprite = data.symbolSprites[data.symbols[i]-1];
 
             symbol.transform.localPosition = Vector3.up * yPosition;
-            yPosition += _reelData.data.GetVerticalSpacing();
+            yPosition += data.GetVerticalSpacing();
+        }
+
+        for(int i=0; i<2; i++)
+        {
+            symbol = Instantiate(_symbolPrefab, transform);
+            symbol.sprite = data.symbolSprites[data.symbols[i]-1];
+
+            symbol.transform.localPosition = Vector3.up * yPosition;
+            yPosition += data.GetVerticalSpacing();
         }
     }
 
-    public void Spin()
-    {
-        _controller.Spin();
-        StartCoroutine(_controller.Spinning());
-    }
-
-    public void Stop()
-    {
-        _controller.StopSpin();
-    }
-
-    private void OnSpin(float position)
-    {
-        transform.position = new Vector3(transform.position.x, position, transform.position.z);
-    }
+    public void Spin() => _observer.OnSpinInteract(this);
+    public void Stop() => _observer.OnStopSpinInteract();
+    public void OnSpin(float position) => transform.position = new Vector3(transform.position.x, position, transform.position.z);
 }
