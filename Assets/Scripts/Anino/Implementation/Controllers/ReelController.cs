@@ -44,7 +44,7 @@ namespace Anino.Implementation
 
         public void Spin()
         {
-            _speed = UnityEngine.Random.Range(0.02f, 0.05f);
+            _speed = UnityEngine.Random.Range(0.5f, 1f);
             _isSpinning = true;
         }
 
