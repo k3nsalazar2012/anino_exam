@@ -4,12 +4,14 @@ using Anino.Framework;
 using Anino.Implementation;
 using UnityEngine;
 using Zenject;
+using TMPro;
 
 public class SlotMachineInstance : MonoBehaviour, IPayoutSubscriber
 {
     [SerializeField] private ReelInstance[] _reels;
     [SerializeField] private PayoutLineDataAsset[] _payoutLines;
-    
+    [SerializeField] private TextMeshProUGUI _winText;
+
     private WaitForSeconds _delay = new WaitForSeconds(0.1f);
 
     private bool _isSpinning = false;
@@ -49,13 +51,22 @@ public class SlotMachineInstance : MonoBehaviour, IPayoutSubscriber
     {
         _isSpinning = !_isSpinning;
         if(_isSpinning)
+        {
+            if(_currencyService.betAmount > _currencyService.currency.amount)
+            {
+                _isSpinning = false;
+                return;
+            }
+
             StartCoroutine(StartSpin());
+        }
         else
             StartCoroutine(StopSpin());
     }
 
     private IEnumerator StartSpin()
     {
+        _winText.text = "";
         _currencyService.RemoveCurrency(_currencyService.betAmount);
         _results = new List<List<int>>();
 

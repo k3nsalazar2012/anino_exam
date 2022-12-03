@@ -5,17 +5,19 @@ using UnityEngine;
 using Zenject;
 using TMPro;
 
-public class GameCurrency : MonoBehaviour, ICurrencyView, ICurrencySubscriber
+public class GameCurrency : MonoBehaviour, ICurrencyView, ICurrencySubscriber, IPayoutSubscriber
 {
     [Serializable]
     public struct MainComponents
     {
         public TextMeshProUGUI CurrencyText;
+        public TextMeshProUGUI WinText;
     }
 
     [SerializeField] private MainComponents _mainComponents;
 
     private ICurrencyService _currencyService;
+    private IPayoutService _payoutService;
     public ICurrencyController controller => _controller;
     private ICurrencyController _controller;
 
@@ -25,12 +27,16 @@ public class GameCurrency : MonoBehaviour, ICurrencyView, ICurrencySubscriber
     }
 
     [Inject]
-    public void Construct(DiContainer container, ICurrencyService currencyService)
+    public void Construct(DiContainer container, ICurrencyService currencyService, PayoutService payoutService)
     {
         _controller = new CurrencyController();
         _controller.SetView(this);
 
         _currencyService = currencyService;
+        _payoutService = payoutService;
+        
+        _payoutService.Subscribe(this);
+
         ICurrency currency = container.Instantiate<Currency>();
         
         _currencyService.Subscribe(this);
@@ -41,12 +47,16 @@ public class GameCurrency : MonoBehaviour, ICurrencyView, ICurrencySubscriber
 
     public void OnCurrencyUpdated(long amount)
     {
-        Debug.Log($"[controller] {_controller==null}");
         _controller.SetCurrencyAmount(amount);
     }
 
     public void UpdateCurrencyText(long amount)
     {
         _mainComponents.CurrencyText.text = $"${amount.ToString("N0")}";  
+    }
+
+    public void OnWin(int payoutLinesCount)
+    {
+        _mainComponents.WinText.text = $"Win: ${(_currencyService.betAmount * payoutLinesCount).ToString("N0")}";
     }
 }
