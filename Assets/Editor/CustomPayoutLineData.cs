@@ -11,7 +11,7 @@ public class CustomPayoutLineData : PropertyDrawer
         Rect newPosition = position;
         newPosition.y += 20f;
 
-        SerializedProperty rows = property.FindPropertyRelative("rows");
+        SerializedProperty rows = property.FindPropertyRelative("_rows");
 
         for(int i=0; i< 3; i++)
         {

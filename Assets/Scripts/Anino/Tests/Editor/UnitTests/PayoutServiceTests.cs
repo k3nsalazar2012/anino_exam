@@ -25,7 +25,7 @@ namespace Anino.Tests
         }
 
         [Test]
-        public void HasValid_GetPayoutLinesHitCount_ResultsHasValidPayoutLine_ResultIsTrueAndThree()
+        public void HasPayout_GetPayoutLinesHitCount_ResultsHasValidPayoutLine_ResultIsTrueAndThree()
         {
             // Arrange
             List<int> reel1 = new List<int>{1,2,3};

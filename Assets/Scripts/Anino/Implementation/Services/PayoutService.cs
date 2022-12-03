@@ -54,9 +54,8 @@ namespace Anino.Implementation
                 }
 
                 foreach(var lines in _payoutLines)
-                {
-                    if(Enumerable.SequenceEqual(lines, _singleValueResults))
-                        _payoutLinesHitCount++;                        
+                { 
+                    CheckLineAndResults(lines, _singleValueResults);                    
                 }
             }
 
@@ -71,6 +70,22 @@ namespace Anino.Implementation
         public int GetPayoutLinesHitCount()
         {
             return _payoutLinesHitCount;
+        }
+
+        private void CheckLineAndResults(List<int> lines, List<int> results)
+        {
+            int matchCount = 0;
+
+            for(int i=0; i<lines.Count; i++)
+            {
+                if(lines[i]==1 && (lines[i] == results[i]))
+                {
+                    matchCount++;
+                }
+            }
+
+            if(matchCount == REELS_COUNT)
+                _payoutLinesHitCount++;
         }
     }
 }

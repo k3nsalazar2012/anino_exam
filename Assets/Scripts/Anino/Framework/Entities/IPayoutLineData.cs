@@ -2,6 +2,12 @@ namespace Anino.Framework
 {
     public interface IPayoutLineData
     {
-        int[] row {get;}
+        RowData[] rows {get;}
+    }
+
+    [System.Serializable]
+    public struct RowData
+    {
+        public int[] row;
     }
 }
