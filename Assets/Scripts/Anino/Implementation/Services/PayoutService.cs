@@ -30,7 +30,12 @@ namespace Anino.Implementation
                 }
             }
 
-            _validGroupsBySymbol = _singleDimensionSpinResults.GroupBy(v => v).Where(v => v.Count() == REELS_COUNT);
+            foreach(var result in _singleDimensionSpinResults)
+            {
+                UnityEngine.Debug.Log($"[result] {result}");
+            }
+
+            _validGroupsBySymbol = _singleDimensionSpinResults.GroupBy(v => v).Where(v => v.Count() >= REELS_COUNT);
             
             CalculatePayoutLines();
         }

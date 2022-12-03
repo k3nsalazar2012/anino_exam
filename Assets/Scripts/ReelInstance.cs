@@ -22,15 +22,32 @@ public class ReelInstance : MonoBehaviour, IReelView
 
     public void CreateReel()
     {
-        float yPosition = -_reelData.data.GetVerticalSpacing();
+        var data = _reelData.data;
 
-        for(int i=0; i<_reelData.data.symbolSprites.Length; i++)
+        float yPosition = -data.GetVerticalSpacing();
+
+        SpriteRenderer symbol = Instantiate(_symbolPrefab, transform);
+        symbol.sprite = data.symbolSprites[data.symbols[_reelData.data.symbolsCount-1]-1];
+        symbol.transform.localPosition = Vector3.up * yPosition;
+
+        yPosition += data.GetVerticalSpacing();
+
+        for(int i=0; i<data.symbols.Length; i++)
         {
-            SpriteRenderer symbol = Instantiate(_symbolPrefab, transform);
-            symbol.sprite = _reelData.data.symbolSprites[i];
+            symbol = Instantiate(_symbolPrefab, transform);
+            symbol.sprite = data.symbolSprites[data.symbols[i]-1];
 
             symbol.transform.localPosition = Vector3.up * yPosition;
-            yPosition += _reelData.data.GetVerticalSpacing();
+            yPosition += data.GetVerticalSpacing();
+        }
+
+        for(int i=0; i<2; i++)
+        {
+            symbol = Instantiate(_symbolPrefab, transform);
+            symbol.sprite = data.symbolSprites[data.symbols[i]-1];
+
+            symbol.transform.localPosition = Vector3.up * yPosition;
+            yPosition += data.GetVerticalSpacing();
         }
     }
 
