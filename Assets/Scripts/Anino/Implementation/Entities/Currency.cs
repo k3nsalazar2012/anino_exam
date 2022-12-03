@@ -8,7 +8,7 @@ namespace Anino.Implementation
         [SerializeField] private long _amount;
         public long amount => _amount;
 
-        public Currency(long amount)
+        public void SetAmount(long amount)
         {
             _amount = amount;
         }

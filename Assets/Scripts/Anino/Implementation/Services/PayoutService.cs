@@ -13,6 +13,7 @@ namespace Anino.Implementation
         private IEnumerable<IGrouping<int, int>> _validGroupsBySymbol;
         private int _payoutLinesHitCount;
         private bool _hasPayout;
+        private List<IPayoutSubscriber> _subscriptions = new List<IPayoutSubscriber>();
 
         public void SetPayoutLines(List<List<int>> payoutLines)
         {
@@ -30,15 +31,14 @@ namespace Anino.Implementation
                 }
             }
 
-            foreach(var result in _singleDimensionSpinResults)
+            /*foreach(var result in _singleDimensionSpinResults)
             {
-                //UnityEngine.Debug.Log($"[result] {result}");
-            }
+                UnityEngine.Debug.Log($"[result] {result}");
+            }*/
 
             _validGroupsBySymbol = _singleDimensionSpinResults.GroupBy(v => v).Where(v => v.Count() >= REELS_COUNT);
             
             CalculatePayoutLines();
-            UnityEngine.Debug.Log($"[payouts] {_payoutLinesHitCount}");
         }
 
         public void CalculatePayoutLines()
@@ -61,6 +61,9 @@ namespace Anino.Implementation
             }
 
             _hasPayout = _payoutLinesHitCount != 0;
+            
+            if(_hasPayout)
+                NotifySubscribers();
         }
 
         public bool HasPayout()
@@ -87,6 +90,26 @@ namespace Anino.Implementation
 
             if(matchCount == REELS_COUNT)
                 _payoutLinesHitCount++;
+        }
+
+        public void Subscribe(IPayoutSubscriber subscriber)
+        {
+            if(!_subscriptions.Contains(subscriber))
+                _subscriptions.Add(subscriber);
+        }
+
+        public void Unsubscriber(IPayoutSubscriber subscriber)
+        {
+            if(_subscriptions.Contains(subscriber))
+                _subscriptions.Remove(subscriber);
+        }
+
+        public void NotifySubscribers()
+        {
+            foreach(var subscriber in _subscriptions)
+            {
+                subscriber?.OnWin(_payoutLinesHitCount);
+            }
         }
     }
 }

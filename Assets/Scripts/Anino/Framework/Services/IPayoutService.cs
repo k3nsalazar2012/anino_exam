@@ -9,5 +9,9 @@ namespace Anino.Framework
         void CalculatePayoutLines();
         bool HasPayout();   
         int GetPayoutLinesHitCount();
+
+        void Subscribe(IPayoutSubscriber subscriber);
+        void Unsubscriber(IPayoutSubscriber subscriber);
+        void NotifySubscribers();
     }
 }

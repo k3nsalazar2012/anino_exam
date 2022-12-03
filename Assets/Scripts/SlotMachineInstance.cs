@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Anino.Framework;
@@ -6,7 +5,7 @@ using Anino.Implementation;
 using UnityEngine;
 using Zenject;
 
-public class SlotMachineInstance : MonoBehaviour
+public class SlotMachineInstance : MonoBehaviour, IPayoutSubscriber
 {
     [SerializeField] private ReelInstance[] _reels;
     [SerializeField] private PayoutLineDataAsset[] _payoutLines;
@@ -16,7 +15,8 @@ public class SlotMachineInstance : MonoBehaviour
     private bool _isSpinning = false;
     private List<List<int>> _results;
     private List<int> _singleArrayResults;
-    private PayoutService _payoutService;
+    private IPayoutService _payoutService;
+    private ICurrencyService _currencyService;
 
     private void Awake()
     {
@@ -26,22 +26,16 @@ public class SlotMachineInstance : MonoBehaviour
             reelView.Initialize();
             reelView.controller.onSpinEnded += SpinEnded;
         }
-
-        /*_payoutService = new PayoutService();
-        List<List<int>> lines = new List<List<int>>();
-        foreach(var payoutLine in _payoutLines)
-        {
-             var line = payoutLine.data.GetDataAsSingleArray();
-             lines.Add(line);
-        }
-        _payoutService.SetPayoutLines(lines);*/
     }
 
     [Inject]
-    public void Construct(PayoutService payoutService)
+    public void Construct(PayoutService payoutService, CurrencyService currencyService)
     {
         _payoutService = payoutService;
-        Debug.Log($"[slot machine] {_payoutService == null}");
+        _currencyService = currencyService;
+
+        _payoutService.Subscribe(this);
+        
         List<List<int>> lines = new List<List<int>>();
         foreach(var payoutLine in _payoutLines)
         {
@@ -62,6 +56,7 @@ public class SlotMachineInstance : MonoBehaviour
 
     private IEnumerator StartSpin()
     {
+        _currencyService.RemoveCurrency(_currencyService.betAmount);
         _results = new List<List<int>>();
 
         foreach(var reel in _reels)
@@ -85,5 +80,11 @@ public class SlotMachineInstance : MonoBehaviour
     {
         List<int> reelResult = new List<int>{topRowResult, middleRowResult, bottomRowResult};
         _results.Add(reelResult);
+    }
+
+    public void OnWin(int payoutLinesCount)
+    {
+        _currencyService.AddCurrency(_currencyService.betAmount * payoutLinesCount);
+        Debug.Log($"[payout] win: {payoutLinesCount}");
     }
 }
