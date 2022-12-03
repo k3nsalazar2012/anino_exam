@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Anino.Framework;
 using Anino.Implementation;
 using UnityEngine;
+using Zenject;
 
 public class SlotMachineInstance : MonoBehaviour
 {
@@ -26,7 +27,21 @@ public class SlotMachineInstance : MonoBehaviour
             reelView.controller.onSpinEnded += SpinEnded;
         }
 
-        _payoutService = new PayoutService();
+        /*_payoutService = new PayoutService();
+        List<List<int>> lines = new List<List<int>>();
+        foreach(var payoutLine in _payoutLines)
+        {
+             var line = payoutLine.data.GetDataAsSingleArray();
+             lines.Add(line);
+        }
+        _payoutService.SetPayoutLines(lines);*/
+    }
+
+    [Inject]
+    public void Construct(PayoutService payoutService)
+    {
+        _payoutService = payoutService;
+        Debug.Log($"[slot machine] {_payoutService == null}");
         List<List<int>> lines = new List<List<int>>();
         foreach(var payoutLine in _payoutLines)
         {
