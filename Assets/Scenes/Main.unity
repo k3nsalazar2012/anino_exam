@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 615330334}
   - component: {fileID: 615330333}
   m_Layer: 0
-  m_Name: SlotMachine
+  m_Name: SlotMachineInstance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,6 +253,27 @@ MonoBehaviour:
   - {fileID: 753174921}
   - {fileID: 387653227}
   - {fileID: 1042462398}
+  _payoutLines:
+  - {fileID: 11400000, guid: 6fb1601d496334983b163f3a8a39ca81, type: 2}
+  - {fileID: 11400000, guid: 72dc5fed1dbf54b10b806cdc47658408, type: 2}
+  - {fileID: 11400000, guid: 5373cc11637ea4325bba691b978add65, type: 2}
+  - {fileID: 11400000, guid: a2709d1310fb944a4bb2bdd628b5be3e, type: 2}
+  - {fileID: 11400000, guid: ecbb0da6369904bf0a9e673329097b4f, type: 2}
+  - {fileID: 11400000, guid: 975c84fcc9bad476593d05ee493a77f2, type: 2}
+  - {fileID: 11400000, guid: 2c17bb5d2f70249fca96ee0154b10559, type: 2}
+  - {fileID: 11400000, guid: b90acc31402b34c918ed848264241176, type: 2}
+  - {fileID: 11400000, guid: f66a5bd53b20a4520a87ad829c26f6e9, type: 2}
+  - {fileID: 11400000, guid: f5cf0e4e4ef8d4c0a9fdf8e08167a58f, type: 2}
+  - {fileID: 11400000, guid: 15eb34f30e99441dc98d8621c0c4bdb6, type: 2}
+  - {fileID: 11400000, guid: 835058a0bf2124007aec2719e4b2729f, type: 2}
+  - {fileID: 11400000, guid: ad38c40effdf340aba7419f0c244ac76, type: 2}
+  - {fileID: 11400000, guid: 99f2b76f87c0f43c3b9e9f9f4a9da4b2, type: 2}
+  - {fileID: 11400000, guid: a819e1f68fe9d4381bd30554e5062c3e, type: 2}
+  - {fileID: 11400000, guid: dabdd1d0be612474298e0d83769db377, type: 2}
+  - {fileID: 11400000, guid: af8338bcd6efb44a8b3deb7318700938, type: 2}
+  - {fileID: 11400000, guid: 8766afc01ce924ac7bcfacc68ab86b5e, type: 2}
+  - {fileID: 11400000, guid: c2fa466b66cc146d58bc801ba3e0cec1, type: 2}
+  - {fileID: 11400000, guid: 0fda324e966ea4f20a2fb9b9bb24345d, type: 2}
 --- !u!4 &615330334
 Transform:
   m_ObjectHideFlags: 0
@@ -868,7 +889,7 @@ PrefabInstance:
     - target: {fileID: 8961491866808512019, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
       propertyPath: _reelData
       value: 
-      objectReference: {fileID: 11400000, guid: b426a3c357ba64941953e3efd99ac62f, type: 2}
+      objectReference: {fileID: 11400000, guid: c4ed97ff8bd52491c972207a02984073, type: 2}
     - target: {fileID: 8961491866808512029, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
       propertyPath: m_Name
       value: ReelInstance
@@ -1067,7 +1088,7 @@ PrefabInstance:
     - target: {fileID: 8961491866808512019, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
       propertyPath: _reelData
       value: 
-      objectReference: {fileID: 11400000, guid: b426a3c357ba64941953e3efd99ac62f, type: 2}
+      objectReference: {fileID: 11400000, guid: c4ed97ff8bd52491c972207a02984073, type: 2}
     - target: {fileID: 8961491866808512029, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
       propertyPath: m_Name
       value: ReelInstance
@@ -1143,7 +1164,7 @@ PrefabInstance:
     - target: {fileID: 8961491866808512019, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
       propertyPath: _reelData
       value: 
-      objectReference: {fileID: 11400000, guid: b426a3c357ba64941953e3efd99ac62f, type: 2}
+      objectReference: {fileID: 11400000, guid: c4ed97ff8bd52491c972207a02984073, type: 2}
     - target: {fileID: 8961491866808512029, guid: 3bd2666f8f203482ca01bb7184ee574d, type: 3}
       propertyPath: m_Name
       value: ReelInstance

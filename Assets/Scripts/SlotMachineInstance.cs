@@ -2,15 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Anino.Framework;
+using Anino.Implementation;
 using UnityEngine;
 
 public class SlotMachineInstance : MonoBehaviour
 {
     [SerializeField] private ReelInstance[] _reels;
+    [SerializeField] private PayoutLineDataAsset[] _payoutLines;
+    
     private WaitForSeconds _delay = new WaitForSeconds(0.1f);
 
     private bool _isSpinning = false;
-    
+    private List<List<int>> _results;
+    private List<int> _singleArrayResults;
+    private PayoutService _payoutService;
+
     private void Awake()
     {
         foreach(var reel in _reels)
@@ -19,6 +25,15 @@ public class SlotMachineInstance : MonoBehaviour
             reelView.Initialize();
             reelView.controller.onSpinEnded += SpinEnded;
         }
+
+        _payoutService = new PayoutService();
+        List<List<int>> lines = new List<List<int>>();
+        foreach(var payoutLine in _payoutLines)
+        {
+             var line = payoutLine.data.GetDataAsSingleArray();
+             lines.Add(line);
+        }
+        _payoutService.SetPayoutLines(lines);
     }
 
     public void OnSpinButton() 
@@ -32,6 +47,8 @@ public class SlotMachineInstance : MonoBehaviour
 
     private IEnumerator StartSpin()
     {
+        _results = new List<List<int>>();
+
         foreach(var reel in _reels)
         {
             reel.Spin();
@@ -46,10 +63,12 @@ public class SlotMachineInstance : MonoBehaviour
             reel.Stop();
             yield return _delay;
         }
+        _payoutService.SetResults(_results);
     }
 
     private void SpinEnded(int topRowResult, int middleRowResult, int bottomRowResult)
     {
-         Debug.Log($"[results] {topRowResult},{middleRowResult},{bottomRowResult}");
+        List<int> reelResult = new List<int>{topRowResult, middleRowResult, bottomRowResult};
+        _results.Add(reelResult);
     }
 }
