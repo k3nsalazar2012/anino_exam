@@ -9,6 +9,7 @@ Instructions:
   - architecture setup separated by assembly definitions
   - unit tested implementations
   - the apk is under builds folder
+  - the documentation is under the root of Assets folder
   
 Notes:
   - I used zenject for dependency injection and managing bindings
